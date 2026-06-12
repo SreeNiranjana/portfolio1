@@ -1,3 +1,4 @@
+```css
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +10,6 @@ body {
     background: #0f172a;
     color: #111;
     overflow-x: hidden;
-    transition: background 0.4s ease;
 }
 
 /* =========================
@@ -65,7 +65,7 @@ header p {
     color: #e2e8f0;
 }
 
-/* Sections with fade animation */
+/* Sections */
 
 .section {
     margin-bottom: 60px;
@@ -90,9 +90,9 @@ header p {
 /* Glass Cards */
 
 .card {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: transparent;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
     border-radius: 18px;
     padding: 30px;
     margin-bottom: 20px;
@@ -107,7 +107,7 @@ header p {
 }
 
 .card strong {
-    color: white;
+    color: #ffffff;
 }
 
 ul {
@@ -137,7 +137,6 @@ ul li {
     transform: translateY(-2px);
 }
 
-
 /* Footer */
 
 footer {
@@ -149,7 +148,7 @@ footer {
 
 /* Responsive */
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
 
     header h1 {
         font-size: 32px;
@@ -159,10 +158,10 @@ footer {
         width: 92%;
     }
 
-    .linkedin-btn,
-    #theme-toggle {
+    .linkedin-btn {
         display: block;
         width: fit-content;
         margin: 15px auto;
     }
 }
+```
