@@ -77,6 +77,14 @@ header p {
 
 .section {
     margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section h2 {
@@ -104,7 +112,10 @@ header p {
 .card strong {
     color: #ffffff;
 }
-
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
 ul {
     list-style: none;
 }
@@ -112,7 +123,22 @@ ul {
 ul li {
     margin-bottom: 10px;
 }
+.linkedin-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #0A66C2;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
 
+.linkedin-btn:hover {
+    background: #084d99;
+    transform: translateY(-2px);
+}
 /* Footer */
 
 footer {
@@ -130,7 +156,13 @@ footer {
     }
 
     .container{
-        width: 92%;
+        width:92%;
+    }
+
+    .linkedin-btn{
+        display:block;
+        width:fit-content;
+        margin:15px auto;
     }
 }
 </style>
@@ -268,19 +300,6 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => observer.observe(section));
 
-
-// Dark/Light mode
-const toggleBtn = document.getElementById("theme-toggle");
-
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-
-    if (document.body.classList.contains("light-mode")) {
-        toggleBtn.innerHTML = "☀️ Light Mode";
-    } else {
-        toggleBtn.innerHTML = "🌙 Dark Mode";
-    }
-});
 </script>
 
 </body>
