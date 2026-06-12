@@ -23,3 +23,24 @@ canvas {
   height: 100%;
   display: block;
 }
+
+/* LinkedIn Button */
+
+.linkedin-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #0A66C2;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(10, 102, 194, 0.4);
+}
+
+.linkedin-btn:hover {
+  background-color: #084d99;
+  transform: translateY(-2px);
+}
