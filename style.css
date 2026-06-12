@@ -137,48 +137,6 @@ ul li {
     transform: translateY(-2px);
 }
 
-/* Dark/Light Mode Button */
-
-#theme-toggle {
-    margin-top: 15px;
-    margin-left: 10px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 30px;
-    background: #38bdf8;
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-
-#theme-toggle:hover {
-    transform: translateY(-2px);
-}
-
-/* Light Mode */
-
-body.light-mode {
-    background: #f1f5f9;
-}
-
-body.light-mode header h1,
-body.light-mode .section h2 {
-    color: #0f172a;
-}
-
-body.light-mode header p {
-    color: #334155;
-}
-
-body.light-mode .card {
-    color: #111827;
-    border: 1px solid rgba(0,0,0,0.1);
-}
-
-body.light-mode .card strong {
-    color: #111827;
-}
 
 /* Footer */
 
