@@ -1,46 +1,210 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  height: 400vh; /* Controls scroll length */
-  background: black;
-  overflow-x: hidden;
+    background: #0f172a;
+    color: #111;
+    overflow-x: hidden;
+    transition: background 0.4s ease;
 }
 
-.scroll-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+/* =========================
+   Scroll Animation Background
+========================= */
+
+#scroll-animation-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    overflow: hidden;
 }
 
-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
+#scroll-frame {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+}
+
+/* =========================
+   Layout
+========================= */
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 0;
+    position: relative;
+    z-index: 5;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+header h1 {
+    font-size: 48px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+header p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #e2e8f0;
+}
+
+/* Sections with fade animation */
+
+.section {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    border-left: 5px solid #38bdf8;
+    padding-left: 12px;
+}
+
+/* Glass Cards */
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card strong {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 10px;
 }
 
 /* LinkedIn Button */
 
 .linkedin-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background-color: #0A66C2;
-  color: white !important;
-  text-decoration: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 15px rgba(10, 102, 194, 0.4);
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #0A66C2;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
 .linkedin-btn:hover {
-  background-color: #084d99;
-  transform: translateY(-2px);
+    background: #084d99;
+    transform: translateY(-2px);
+}
+
+/* Dark/Light Mode Button */
+
+#theme-toggle {
+    margin-top: 15px;
+    margin-left: 10px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #38bdf8;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: translateY(-2px);
+}
+
+/* Light Mode */
+
+body.light-mode {
+    background: #f1f5f9;
+}
+
+body.light-mode header h1,
+body.light-mode .section h2 {
+    color: #0f172a;
+}
+
+body.light-mode header p {
+    color: #334155;
+}
+
+body.light-mode .card {
+    color: #111827;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+body.light-mode .card strong {
+    color: #111827;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 50px 0;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+/* Responsive */
+
+@media(max-width:768px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .linkedin-btn,
+    #theme-toggle {
+        display: block;
+        width: fit-content;
+        margin: 15px auto;
+    }
 }
