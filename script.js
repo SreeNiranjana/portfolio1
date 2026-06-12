@@ -80,23 +80,4 @@ sections.forEach((section) => {
   observer.observe(section);
 });
 
-
-// =====================
-// Dark / Light Mode
-// =====================
-
-const toggleBtn = document.getElementById("theme-toggle");
-
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-
-    document.body.classList.toggle("light-mode");
-
-    if (document.body.classList.contains("light-mode")) {
-      toggleBtn.innerHTML = "☀️ Light Mode";
-    } else {
-      toggleBtn.innerHTML = "🌙 Dark Mode";
-    }
-
-  });
 }
