@@ -1,3 +1,4 @@
+```javascript
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
@@ -59,25 +60,27 @@ window.addEventListener("resize", () => {
   render();
 });
 
-
 // =====================
 // Fade-In Animation
 // =====================
 
 const sections = document.querySelectorAll(".section");
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, {
-  threshold: 0.15
-});
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
 
 sections.forEach((section) => {
   observer.observe(section);
 });
+```
 
-}
